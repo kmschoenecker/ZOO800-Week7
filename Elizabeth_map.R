@@ -95,13 +95,15 @@ wi_m_pretty <- wi_b +
     x = "Longitude",
     y = "Latitude"
   ) + 
+  #adding legend labels and title 
+  
   theme(
     legend.position = "right", 
     plot.title = element_text(
       hjust = 0.5, 
       size = 14, 
       face = "bold")) 
-  #these are just labels 
+  #if you don't add hte theme, it gets mad and doesn't plot them 
 
 wi_m_pretty # heads up this takeas a while to load 
 
