@@ -18,4 +18,6 @@ library(grid)
 library(ggsn)
 library(ggspatial)
 
-#
+#read in field site csv
+
+bb_sites <- read.csv("bb_fieldsites - Sheet1.csv", header = TRUE)
