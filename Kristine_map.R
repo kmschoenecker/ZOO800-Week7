@@ -3,8 +3,8 @@
 
 #Kristine's map
 
-#I had previously worked with a lab member to make some basic site location maps for my data.
-#This code modifies that original output
+#I had previously worked with a lab member (Jade) to make some basic site location maps for my data from a different project
+#This code modifies that original output a bit
 
 #Final result: Map of my Wisconsin Field Sites
 
@@ -49,9 +49,10 @@ wi_m #very basic map, in black and white
 
 #I want to make this map better
 #zoom in on my field sites, and color code by the cluster
+#context, the clusters were just groups of sites visited in the same day or over two days in a row
 
 wi_base <- ggplot(data = wi, mapping = aes(x = long, y = lat, group = group)) + 
-  coord_fixed(1.3) + 
+  coord_fixed(1.3) + #I believe this just applies the aspect ratio for the map
   geom_polygon(color = "black", fill = "#f0f0f0")
 
 wi_base #view wi base map
@@ -72,7 +73,4 @@ wi_map <- wi_base + theme_nothing() +
 
 wi_map #map with the field sites colored by their cluster
 
-#if I want a close up image of those field sites (since none of my field sites are super up north in WI)
-
-
-
+#ggsave("wi_map.jpeg") #uncomment this if you want to save the map as an image
