@@ -63,10 +63,14 @@ wi_map <- wi_base + theme_nothing() +
   geom_point(data = bb_sites, mapping = 
                aes(x = longitude, y = latitude, shape = cluster), 
              size = 1.75, inherit.aes = FALSE) +
-  labs(
-    shape = "Cluster"
-  ) +
-  theme(legend.position = "right")
+  labs(title = 'Long-term Bombus Monitoring Sites',
+       legend = 'Cluster') +
+  theme(
+    legend.position = "right", 
+    plot.title = element_text(
+      hjust = 0.5, 
+      size = 14, 
+      face = "bold")) 
 #scale_shape_manual(values = c(16,16,17)) +
 # scalebar(wi, dist = 50, st.size=3, height=0.0 +25, dist_unit = "km", transform = TRUE, model = "WGS84", location = "bottomleft")
 
