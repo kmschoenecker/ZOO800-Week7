@@ -61,16 +61,16 @@ wi_map <- wi_base + theme_nothing() +
   geom_polygon(data = wi_county, fill = NA, color = "black") + #outline our counties in white
   geom_polygon(color = "black", fill = NA) + #black outline of the state?
   geom_point(data = bb_sites, mapping = 
-               aes(x = longitude, y = latitude, color = cluster), 
-             size = 2, inherit.aes = FALSE) +
+               aes(x = longitude, y = latitude, shape = cluster), 
+             size = 1.75, inherit.aes = FALSE) +
   labs(
-    color = "Cluster"
+    shape = "Cluster"
   ) +
   theme(legend.position = "right")
-
 #scale_shape_manual(values = c(16,16,17)) +
 # scalebar(wi, dist = 50, st.size=3, height=0.0 +25, dist_unit = "km", transform = TRUE, model = "WGS84", location = "bottomleft")
 
 wi_map #map with the field sites colored by their cluster
 
-#ggsave("wi_map.jpeg") #uncomment this if you want to save the map as an image
+ggsave("wi_map.jpeg") #uncomment this if you want to save the map as an image
+
